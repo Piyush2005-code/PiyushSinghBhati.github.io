@@ -33,22 +33,21 @@ const AboutSection = () => {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 I'm an undergraduate <span className="text-foreground">Computer Science and Engineering</span> student 
-                at <span className="text-primary">IIT Jodhpur</span>, focused on building 
-                <span className="text-foreground"> intelligent systems</span>—from Large Language Models and 
-                GPU-accelerated inference pipelines to multimodal AI architectures.
+                at <span className="text-primary">IIT Jodhpur</span>, passionate about 
+                <span className="text-foreground">Applied Deep Learning</span> and building 
+                <span className="text-foreground">AI systems</span> that solve real problems.
               </p>
               <p>
-                My core expertise lies in <span className="text-foreground">Deep Learning</span>, 
-                <span className="text-foreground"> LLM engineering</span>, and 
-                <span className="text-foreground"> real-time AI systems</span>. I've built RAG-based voice 
-                assistants with vLLM, natural language interfaces for data visualization, and 
-                ML-powered scheduling algorithms.
+                I've applied machine learning to <span className="text-foreground">real-world engineering</span>—using 
+                neural surrogate models to accelerate physical simulations and optimize design workflows 
+                that traditionally rely on computationally expensive methods.
               </p>
               <p>
-                Beyond software, I'm drawn to applying AI where it meets the 
-                <span className="text-foreground">physical world</span>—using 
-                <span className="text-primary">neural surrogate models</span> to accelerate engineering simulations, 
-                physics-informed networks for robotics, and ML-driven optimization for real-world systems.
+                Currently exploring <span className="text-foreground">Embedded Systems</span> and 
+                <span className="text-foreground"> Operating Systems</span>—the low-level foundations 
+                that fascinate me. My goal is to work on <span className="text-primary">AI inference 
+                on compute-constrained resources</span> and <span className="text-primary">AI-focused robotics</span>, 
+                where intelligent systems meet hardware limitations.
               </p>
             </div>
 
