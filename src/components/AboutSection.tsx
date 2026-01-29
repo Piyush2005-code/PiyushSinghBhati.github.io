@@ -27,25 +27,27 @@ const AboutSection = () => {
           <div>
             <p className="section-heading">About Me</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-              Engineering the <span className="text-gradient">Future of Flight</span>
+              Engineering <span className="text-gradient">Intelligent Systems</span>
             </h2>
 
             <div className="space-y-4 text-muted-foreground">
               <p>
                 I'm an undergraduate <span className="text-foreground">Computer Science and Engineering</span> student 
-                at <span className="text-primary">IIT Jodhpur</span>, driven by a passion for robotics, 
-                autonomous systems, and fixed-wing UAV design.
+                at <span className="text-primary">IIT Jodhpur</span>, driven by a passion for 
+                <span className="text-foreground"> Machine Learning</span>, <span className="text-foreground">Deep Learning</span>, 
+                and building AI systems that solve real-world problems.
               </p>
               <p>
-                My work sits at the intersection of <span className="text-foreground">physics-based modeling</span>, 
-                <span className="text-foreground"> CFD-driven simulation</span>, and 
-                <span className="text-foreground"> data-driven optimization</span>—bridging theoretical 
-                foundations with real-world engineering applications.
+                My expertise spans <span className="text-foreground">Large Language Models</span>, 
+                <span className="text-foreground"> Physics-Informed Neural Networks</span>, and 
+                <span className="text-foreground"> GPU-accelerated inference pipelines</span>—from RAG-based 
+                voice assistants using vLLM to neural surrogate models for aerodynamic simulation.
               </p>
               <p>
-                From designing complete CAD models of aircraft wings achieving lift coefficients 
-                above <span className="text-primary font-mono">8.12</span> to building GPU-accelerated 
-                voice assistants, I thrive on solving complex, multidisciplinary challenges.
+                In UAV research, I leverage <span className="text-primary">NeuralFoil</span>—a physics-informed 
+                neural network trained on XFoil data—to predict airfoil performance at 
+                <span className="text-foreground font-mono"> 1000×</span> the speed of traditional CFD, 
+                enabling rapid design iteration through ML-driven optimization.
               </p>
             </div>
 
