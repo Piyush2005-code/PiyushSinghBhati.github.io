@@ -50,7 +50,7 @@ const AboutSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t border-border/50">
+            <div className="grid grid-cols-2 gap-6 mt-8 pt-8 border-t border-border/50">
               <div>
                 <p className="text-3xl font-bold text-primary font-mono">8.75</p>
                 <p className="text-sm text-muted-foreground mt-1">CGPA</p>
@@ -58,10 +58,6 @@ const AboutSection = () => {
               <div>
                 <p className="text-3xl font-bold text-primary font-mono">5+</p>
                 <p className="text-sm text-muted-foreground mt-1">Projects</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-primary font-mono">8.12</p>
-                <p className="text-sm text-muted-foreground mt-1">Max CL</p>
               </div>
             </div>
           </div>

@@ -5,11 +5,13 @@ import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import BackgroundMusic from "@/components/BackgroundMusic";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground scrollbar-hidden">
       <Navigation />
+      <BackgroundMusic />
       <main>
         <HeroSection />
         <AboutSection />

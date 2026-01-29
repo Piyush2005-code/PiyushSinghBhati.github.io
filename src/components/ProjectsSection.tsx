@@ -1,4 +1,7 @@
 import { ExternalLink, Github } from "lucide-react";
+import jarvisInterface from "@/assets/jarvis-interface.png";
+import llmChartGenerator from "@/assets/llm-chart-generator.png";
+import osScheduler from "@/assets/os-scheduler.png";
 import wingCad from "@/assets/wing-cad.png";
 import wingDrawing from "@/assets/wing-drawing.png";
 import pressureContours from "@/assets/pressure-contours.png";
@@ -17,45 +20,79 @@ interface Project {
 }
 
 const projects: Project[] = [
+  // AI Projects at the top
+  {
+    title: "JARVIS Voice Assistant",
+    subtitle: "2025 • AI/ML Project",
+    description:
+      "Engineered a real-time voice assistant with sub-second latency leveraging GPU-accelerated inference pipelines. Built end-to-end ML infrastructure supporting real-time audio processing, natural language understanding, and context-aware response generation.",
+    images: [jarvisInterface],
+    tags: ["NVIDIA AudioFlamingo3", "vLLM", "RAG", "Docker", "Kubernetes", "PyTorch"],
+    github: "https://github.com/Piyush2005-code",
+    achievements: [
+      "Implemented GPU inference on NVIDIA A5000 with sub-second latency using optimized CUDA kernels",
+      "Deployed containerized ML inference stack supporting 500+ concurrent users with 98% uptime",
+      "Integrated Retrieval-Augmented Generation (RAG) for context-aware, knowledge-grounded responses",
+      "Built real-time audio processing pipeline using AudioFlamingo3 for voice-to-text transcription",
+    ],
+  },
+  {
+    title: "LLM-Based Chart Generation Web App",
+    subtitle: "2025 • Deep Learning Project",
+    description:
+      "Built an automated chart generation pipeline that uses Large Language Models to analyze uploaded PDF documents and generate meaningful data visualizations. Leverages NLP for document understanding and automated insight extraction.",
+    images: [llmChartGenerator],
+    tags: ["LLMs", "NLP", "PDF Parsing", "React", "Node.js", "Data Visualization"],
+    github: "https://github.com/Piyush2005-code",
+    achievements: [
+      "Implemented LLM-based document parsing using transformer architectures for semantic understanding",
+      "Built NLP pipeline for extracting structured data from unstructured PDF content",
+      "Designed automated chart selection algorithm using ML-based data type classification",
+      "Created responsive frontend-backend workflow with real-time data visualization rendering",
+    ],
+  },
+  // CAD Project in the middle
   {
     title: "Fixed-Wing STOL Aircraft Wing Design",
     subtitle: "Inter IIT Tech Meet 14.0",
     description:
-      "Researched fixed-wing flight dynamics and evaluated high-lift wing configurations. Applied physics-informed, CFD-aware neural networks (NeuralFoil) to optimize airfoil geometries under realistic constraints.",
+      "Researched fixed-wing flight dynamics and evaluated high-lift wing configurations. Applied physics-informed, CFD-aware neural networks (NeuralFoil) to optimize airfoil geometries under realistic constraints, combining ML with aerodynamic simulation.",
     images: [wingCad, wingDrawing, pressureContours, cfdSimulation],
-    tags: ["CFD", "ANSYS Fluent", "NeuralFoil", "CAD", "Aerodynamics"],
+    tags: ["NeuralFoil", "CFD", "ANSYS Fluent", "Physics-Informed ML", "CAD", "Aerodynamics"],
     github: "https://github.com/Piyush2005-code",
     achievements: [
-      "Achieved maximum lift coefficient of 8.1258",
-      "Designed complete end-to-end CAD model",
-      "Validated through iterative CFD simulations",
+      "Applied Physics-Informed Neural Networks (NeuralFoil) for airfoil geometry optimization",
+      "Trained surrogate ML models on CFD simulation data for rapid design iteration",
+      "Achieved maximum lift coefficient of 8.1258 through ML-assisted optimization",
+      "Validated ML predictions through iterative CFD simulations in ANSYS Fluent",
     ],
   },
   {
     title: "Quadcopter CAD Design & Development",
-    subtitle: "Personal Project",
+    subtitle: "Personal Project • Robotics",
     description:
       "Complete design and development of a custom quadcopter with detailed CAD modeling, structural analysis, and component integration for autonomous flight capabilities.",
     images: [quadcopterIsometric, quadcopterFront],
-    tags: ["CAD", "UAV Design", "Fusion 360", "Robotics"],
+    tags: ["CAD", "UAV Design", "Fusion 360", "Robotics", "Autonomous Systems"],
     achievements: [
-      "Full assembly CAD model",
-      "Optimized for payload capacity",
-      "Modular component design",
+      "Designed full assembly CAD model with structural optimization",
+      "Optimized frame geometry for payload capacity and flight stability",
+      "Implemented modular component design for easy maintenance and upgrades",
     ],
   },
   {
-    title: "JARVIS Voice Assistant",
-    subtitle: "2025",
+    title: "OS Scheduling Algorithm Simulator",
+    subtitle: "2025 • Systems Programming",
     description:
-      "Engineered a real-time voice assistant using GPU-accelerated inference pipelines with containerized deployment infrastructure supporting concurrent user interaction.",
-    images: [],
-    tags: ["NVIDIA AudioFlamingo3", "vLLM", "RAG", "Docker", "Kubernetes"],
+      "Implemented classical OS scheduling algorithms with interactive UI-based visualization. Features real-time Gantt chart generation for analyzing scheduling behavior and algorithm comparison.",
+    images: [osScheduler],
+    tags: ["React", "TypeScript", "Electron", "Algorithm Visualization", "Operating Systems"],
     github: "https://github.com/Piyush2005-code",
     achievements: [
-      "Real-time GPU-accelerated inference",
-      "Containerized microservices architecture",
-      "Scalable concurrent user support",
+      "Implemented FCFS, Round Robin, and Priority scheduling algorithms with configurable parameters",
+      "Built real-time Gantt chart visualization for process scheduling analysis",
+      "Created interactive UI for comparing algorithm performance metrics",
+      "Developed desktop application using Electron for cross-platform support",
     ],
   },
 ];
@@ -84,16 +121,18 @@ const ProjectsSection = () => {
               {/* Images */}
               <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
                 {project.images.length > 0 ? (
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className={`grid ${project.images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-4`}>
                     {project.images.map((img, i) => (
                       <div
                         key={i}
-                        className="glass-card glow-border overflow-hidden group"
+                        className={`glass-card glow-border overflow-hidden group ${
+                          project.images.length === 1 ? 'aspect-video' : ''
+                        }`}
                       >
                         <img
                           src={img}
                           alt={`${project.title} - ${i + 1}`}
-                          className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+                          className={`w-full ${project.images.length === 1 ? 'h-full' : 'h-40'} object-cover group-hover:scale-105 transition-transform duration-500`}
                         />
                       </div>
                     ))}
