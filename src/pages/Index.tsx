@@ -1,15 +1,15 @@
-import Navigation from "@/components/Navigation";
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import SkillsSection from "@/components/SkillsSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+import Navigation from "@/components/retro/Navigation";
+import HeroSection from "@/components/retro/HeroSection";
+import AboutSection from "@/components/retro/AboutSection";
+import ProjectsSection from "@/components/retro/ProjectsSection";
+import SkillsSection from "@/components/retro/SkillsSection";
+import ContactSection from "@/components/retro/ContactSection";
+import Footer from "@/components/retro/Footer";
 import BackgroundMusic from "@/components/BackgroundMusic";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground scrollbar-hidden">
+    <div className="min-h-screen bg-background text-foreground scrollbar-hidden crt-screen">
       <Navigation />
       <BackgroundMusic />
       <main>
