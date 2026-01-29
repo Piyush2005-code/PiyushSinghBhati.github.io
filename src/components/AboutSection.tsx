@@ -49,6 +49,12 @@ const AboutSection = () => {
                 on compute-constrained resources</span> and <span className="text-primary">AI-focused robotics</span>, 
                 where intelligent systems meet hardware limitations.
               </p>
+              <p>
+                I also have a natural <span className="text-foreground">passion for design</span>—an intuition 
+                for form and aesthetics that has so far found expression through 
+                <span className="text-foreground">CAD modeling</span>, but extends to how I approach 
+                building anything visual.
+              </p>
             </div>
 
             {/* Stats */}
