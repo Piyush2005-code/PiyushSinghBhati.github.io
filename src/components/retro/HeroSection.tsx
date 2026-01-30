@@ -1,11 +1,24 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, Github, Linkedin, Mail, Terminal } from "lucide-react";
+import { useRef } from "react";
+import MagneticButton from "./MagneticButton";
+import GlitchText from "./GlitchText";
 
 const HeroSection = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"]
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden crt-screen">
-      {/* Video Background with CRT effect */}
-      <div className="absolute inset-0 z-0">
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden crt-screen">
+      {/* Video Background with parallax */}
+      <motion.div className="absolute inset-0 z-0" style={{ y: backgroundY }}>
         <video
           autoPlay
           loop
@@ -16,10 +29,9 @@ const HeroSection = () => {
         >
           <source src="/videos/quadcopter-demo.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
-      </div>
+      </motion.div>
 
       {/* Grid pattern */}
       <div className="absolute inset-0 grid-pattern opacity-30 z-10" />
@@ -31,6 +43,7 @@ const HeroSection = () => {
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
+          x: [0, 30, 0],
         }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -40,12 +53,16 @@ const HeroSection = () => {
         animate={{
           scale: [1.2, 1, 1.2],
           opacity: [0.2, 0.4, 0.2],
+          x: [0, -20, 0],
         }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
 
-      {/* Content */}
-      <div className="relative z-20 container mx-auto px-6 text-center">
+      {/* Content with parallax */}
+      <motion.div 
+        className="relative z-20 container mx-auto px-6 text-center"
+        style={{ y: textY, opacity }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,14 +74,15 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
+            whileHover={{ scale: 1.05, boxShadow: "0 0 30px hsl(165 100% 50% / 0.3)" }}
           >
             <Terminal className="w-4 h-4 text-primary" />
             <span className="font-mono text-xs text-primary tracking-wider uppercase">
-              Robotics Engineer • AI Developer
+              <GlitchText text="Robotics Engineer • AI Developer" glitchOnHover />
             </span>
           </motion.div>
 
-          {/* Name with glitch effect */}
+          {/* Name with enhanced glitch effect */}
           <motion.h1
             className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
@@ -91,35 +109,50 @@ const HeroSection = () => {
               Building the future at the intersection of
             </p>
             <p className="text-xl md:text-2xl font-display tracking-wide">
-              <span className="text-primary neon-text-subtle">ARTIFICIAL INTELLIGENCE</span>
+              <motion.span 
+                className="text-primary neon-text-subtle inline-block"
+                whileHover={{ scale: 1.05, textShadow: "0 0 30px hsl(165 100% 50% / 0.8)" }}
+              >
+                ARTIFICIAL INTELLIGENCE
+              </motion.span>
               <span className="text-muted-foreground mx-4">×</span>
-              <span className="text-accent neon-text-subtle">ROBOTIC SYSTEMS</span>
+              <motion.span 
+                className="text-accent neon-text-subtle inline-block"
+                whileHover={{ scale: 1.05, textShadow: "0 0 30px hsl(300 100% 65% / 0.8)" }}
+              >
+                ROBOTIC SYSTEMS
+              </motion.span>
             </p>
           </motion.div>
 
-          {/* Stats bar */}
+          {/* Stats bar with hover effects */}
           <motion.div
             className="flex items-center justify-center gap-8 mb-10 font-mono text-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span className="text-muted-foreground">IIT Jodhpur</span>
-            </div>
-            <div className="h-4 w-px bg-border" />
-            <div className="flex items-center gap-2">
-              <span className="text-primary">B.Tech CSE</span>
-            </div>
-            <div className="h-4 w-px bg-border" />
-            <div className="flex items-center gap-2">
-              <span className="text-muted-foreground">CGPA:</span>
-              <span className="text-primary">8.75</span>
-            </div>
+            {[
+              { label: "IIT Jodhpur", highlight: false },
+              { label: "B.Tech CSE", highlight: true },
+              { label: "CGPA:", value: "8.75", highlight: true },
+            ].map((stat, i) => (
+              <motion.div 
+                key={i}
+                className="flex items-center gap-2"
+                whileHover={{ scale: 1.1, y: -2 }}
+              >
+                {i === 0 && <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />}
+                <span className={stat.highlight ? "text-primary" : "text-muted-foreground"}>
+                  {stat.label}
+                </span>
+                {stat.value && <span className="text-primary">{stat.value}</span>}
+                {i < 2 && <div className="h-4 w-px bg-border ml-6" />}
+              </motion.div>
+            ))}
           </motion.div>
 
-          {/* Social Links */}
+          {/* Social Links with magnetic effect */}
           <motion.div
             className="flex items-center justify-center gap-4 mb-12"
             initial={{ opacity: 0, y: 20 }}
@@ -131,17 +164,11 @@ const HeroSection = () => {
               { href: "https://linkedin.com/in/piyush-singh-bhati-5a074929a", icon: Linkedin, label: "LinkedIn" },
               { href: "mailto:piyush.bhati680@gmail.com", icon: Mail, label: "Email" },
             ].map((link) => (
-              <motion.a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="group p-4 neon-card hover:border-primary/60 transition-all duration-300"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <link.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              </motion.a>
+              <MagneticButton key={link.label} href={link.href}>
+                <div className="group p-4 neon-card hover:border-primary/60 transition-all duration-300">
+                  <link.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+              </MagneticButton>
             ))}
           </motion.div>
 
@@ -152,25 +179,15 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            <motion.a
-              href="#projects"
-              className="retro-btn-filled"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              View Projects
-            </motion.a>
-            <motion.a
-              href="#contact"
-              className="retro-btn"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Contact Me
-            </motion.a>
+            <MagneticButton href="#projects">
+              <span className="retro-btn-filled">View Projects</span>
+            </MagneticButton>
+            <MagneticButton href="#contact">
+              <span className="retro-btn">Contact Me</span>
+            </MagneticButton>
           </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
@@ -189,16 +206,28 @@ const HeroSection = () => {
 
       {/* Side decorative elements */}
       <div className="absolute left-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4 z-20">
-        <div className="w-px h-24 bg-gradient-to-b from-transparent via-primary/50 to-transparent" />
+        <motion.div 
+          className="w-px h-24 bg-gradient-to-b from-transparent via-primary/50 to-transparent"
+          animate={{ scaleY: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
         <span className="font-mono text-[10px] text-muted-foreground -rotate-90 origin-center whitespace-nowrap tracking-[0.3em]">
           SCROLL
         </span>
-        <div className="w-px h-24 bg-gradient-to-b from-transparent via-primary/50 to-transparent" />
+        <motion.div 
+          className="w-px h-24 bg-gradient-to-b from-transparent via-primary/50 to-transparent"
+          animate={{ scaleY: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+        />
       </div>
 
       {/* Right side status */}
       <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-3 z-20">
-        <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+        <motion.div 
+          className="w-2 h-2 rounded-full bg-primary"
+          animate={{ scale: [1, 1.3, 1], boxShadow: ["0 0 0px hsl(165 100% 50%)", "0 0 15px hsl(165 100% 50%)", "0 0 0px hsl(165 100% 50%)"] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
         <div className="w-2 h-2 rounded-full bg-accent/50" />
         <div className="w-2 h-2 rounded-full bg-muted-foreground/30" />
       </div>
