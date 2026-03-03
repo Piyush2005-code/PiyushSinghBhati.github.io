@@ -12,6 +12,7 @@ import embeddedHardware from "@/assets/Embedded_Hardware.avif";
 import cropDetectionImage from "@/assets/Crop_Detection_image.jpg";
 import cropDetectionMask from "@/assets/Crop_Detection_Segmentation_mask.jpg";
 import cropDetectionYolo from "@/assets/Crop_Detection_YOLO_Object_Detection.png";
+import unetModel from "@/assets/UNet model.png";
 
 interface Project {
   title: string;
@@ -76,7 +77,7 @@ const projects: Project[] = [
     subtitle: "2025 • Computer Vision / Deep Learning",
     description:
       "A computer vision system for detecting and segmenting stressed or diseased crop regions from aerial and field imagery. Uses a U-Net CNN to generate pixel-wise binary masks highlighting yellow-stressed vegetation, with a full end-to-end pipeline from synthetic dataset generation to real-time video inference with overlay visualization.",
-    images: [cropDetectionImage, cropDetectionMask, cropDetectionYolo],
+    images: [cropDetectionImage, cropDetectionMask, cropDetectionYolo, unetModel],
     tags: ["PyTorch", "U-Net", "OpenCV", "Semantic Segmentation", "Synthetic Data", "CUDA / MPS"],
     github: "https://github.com/Piyush2005-code",
     achievements: [
