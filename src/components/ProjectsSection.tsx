@@ -8,6 +8,11 @@ import pressureContours from "@/assets/pressure-contours.png";
 import cfdSimulation from "@/assets/cfd-simulation.png";
 import quadcopterIsometric from "@/assets/quadcopter-isometric.png";
 import quadcopterFront from "@/assets/quadcopter-front.png";
+import embeddedHardware from "@/assets/Embedded_Hardware.avif";
+import cropDetectionImage from "@/assets/Crop_Detection_image.jpg";
+import cropDetectionMask from "@/assets/Crop_Detection_Segmentation_mask.jpg";
+import cropDetectionYolo from "@/assets/Crop_Detection_YOLO_Object_Detection.png";
+import unetModel from "@/assets/UNet model.png";
 
 interface Project {
   title: string;
@@ -28,12 +33,28 @@ const projects: Project[] = [
       "Engineered a real-time voice assistant with sub-second latency leveraging GPU-accelerated inference pipelines. Built end-to-end ML infrastructure supporting real-time audio processing, natural language understanding, and context-aware response generation.",
     images: [jarvisInterface],
     tags: ["NVIDIA AudioFlamingo3", "vLLM", "RAG", "Docker", "Kubernetes", "PyTorch"],
-    github: "https://github.com/Piyush2005-code",
+    github: "https://github.com/AISocietyIITJ/Jarvis2.O",
     achievements: [
       "Implemented GPU inference on NVIDIA A5000 with sub-second latency using optimized CUDA kernels",
       "Deployed containerized ML inference stack supporting 500+ concurrent users with 98% uptime",
       "Integrated Retrieval-Augmented Generation (RAG) for context-aware, knowledge-grounded responses",
       "Built real-time audio processing pipeline using AudioFlamingo3 for voice-to-text transcription",
+    ],
+  },
+  {
+    title: "ARM64 Unikernel for ML Inference",
+    subtitle: "2025–Ongoing • Embedded Systems / OS",
+    description:
+      "Architecting a single-address-space ARM64 unikernel optimized for deterministic ML inference on embedded devices. Implemented the full bare-metal boot sequence through UART driver on QEMU, a cooperative scheduler, and conducted benchmarking comparing Unikraft vs Linux VMs across inference workloads.",
+    images: [embeddedHardware],
+    tags: ["C (C11)", "ARM64 Assembly", "QEMU", "GCC Cross-Toolchain", "NEON SIMD", "Unikraft"],
+    github: "https://github.com/Piyush2005-code/MiniOS",
+    achievements: [
+      "Implemented ARMv8-A boot sequence, MMU setup (4KB granularity), identity-mapped page tables, and early UART driver on QEMU virt platform",
+      "Designed and fully tested an OS-agnostic UART communication protocol (CRC validation, bounded parsing, max-payload handling)",
+      "Built a cooperative scheduler prototype and analyzed context-switch overhead (less than 0.1% runtime cost)",
+      "Benchmarked Unikraft vs Linux VMs across inference workloads; analyzed P50/P99 latency and scheduling variance",
+      "Identified SMP scaling limitations in Unikraft ELF loader (single-CPU initialization bottleneck)",
     ],
   },
   {
@@ -43,7 +64,7 @@ const projects: Project[] = [
       "Built an automated chart generation pipeline that uses Large Language Models to analyze uploaded PDF documents and generate meaningful data visualizations. Leverages NLP for document understanding and automated insight extraction.",
     images: [llmChartGenerator],
     tags: ["LLMs", "NLP", "PDF Parsing", "React", "Node.js", "Data Visualization"],
-    github: "https://github.com/Piyush2005-code",
+    github: "https://github.com/Piyush2005-code/Chart-Generation-using-LLMs.git",
     achievements: [
       "Implemented LLM-based document parsing using transformer architectures for semantic understanding",
       "Built NLP pipeline for extracting structured data from unstructured PDF content",
@@ -51,20 +72,35 @@ const projects: Project[] = [
       "Created responsive frontend-backend workflow with real-time data visualization rendering",
     ],
   },
+  {
+    title: "Crop Stress Detection — U-Net Semantic Segmentation",
+    subtitle: "2025 • Computer Vision / Deep Learning",
+    description:
+      "A computer vision system for detecting and segmenting stressed or diseased crop regions from aerial and field imagery. Uses a U-Net CNN to generate pixel-wise binary masks highlighting yellow-stressed vegetation, with a full end-to-end pipeline from synthetic dataset generation to real-time video inference with overlay visualization.",
+    images: [cropDetectionImage, cropDetectionMask, cropDetectionYolo, unetModel],
+    tags: ["PyTorch", "U-Net", "OpenCV", "Semantic Segmentation", "Synthetic Data", "CUDA / MPS"],
+    github: "https://github.com/Piyush2005-code/Computer-Vision-for-stressed-crop-detection.git",
+    achievements: [
+      "Designed and implemented a U-Net-based semantic segmentation model (~7.7M params) with skip connections for pixel-level crop stress detection",
+      "Built a synthetic dataset generation pipeline simulating realistic yellow-stressed patches using Gaussian blending and rotational augmentation (4× expansion)",
+      "Full training pipeline with AdamW optimizer, BCEWithLogitsLoss, Dice coefficient tracking, and 80/10/10 train–val–test split",
+      "Developed real-time video inference pipeline (OpenCV + batch processing) generating overlay MP4 outputs of stressed regions",
+      "Supports CUDA (NVIDIA GPU), Apple MPS, and CPU fallback with memory-optimized reduced-feature U-Net (32 base channels)",
+    ],
+  },
   // CAD Project in the middle
   {
     title: "Fixed-Wing STOL Aircraft Wing Design",
     subtitle: "Inter IIT Tech Meet 14.0",
     description:
-      "Researched fixed-wing flight dynamics and evaluated high-lift wing configurations. Applied physics-informed, CFD-aware neural networks (NeuralFoil) to optimize airfoil geometries under realistic constraints, combining ML with aerodynamic simulation.",
+      "Surveyed high-lift wing configurations targeting lift coefficients greater than 5, benchmarking against state-of-the-art designs. Designed the complete end-to-end CAD model of the full wing assembly and validated aerodynamic performance through iterative CFD simulations.",
     images: [wingCad, wingDrawing, pressureContours, cfdSimulation],
-    tags: ["NeuralFoil", "CFD", "ANSYS Fluent", "Physics-Informed ML", "CAD", "Aerodynamics"],
-    github: "https://github.com/Piyush2005-code",
+    tags: ["CAD", "CFD", "ANSYS Fluent", "Aerodynamics", "Wing Design"],
     achievements: [
-      "Applied Physics-Informed Neural Networks (NeuralFoil) for airfoil geometry optimization",
-      "Trained surrogate ML models on CFD simulation data for rapid design iteration",
-      "Achieved maximum lift coefficient of 8.1258 through ML-assisted optimization",
-      "Validated ML predictions through iterative CFD simulations in ANSYS Fluent",
+      "Studied fixed-wing flight dynamics and surveyed high-lift wing configurations achieving lift coefficients greater than 5",
+      "Achieved a maximum lift coefficient of 8.1258 under realistic thrust-device interaction conditions",
+      "Designed the complete end-to-end CAD model of the full wing assembly",
+      "Validated aerodynamic performance through iterative CFD simulations using ANSYS Fluent",
     ],
   },
   {
@@ -87,7 +123,7 @@ const projects: Project[] = [
       "Implemented classical OS scheduling algorithms with interactive UI-based visualization. Features real-time Gantt chart generation for analyzing scheduling behavior and algorithm comparison.",
     images: [osScheduler],
     tags: ["React", "TypeScript", "Electron", "Algorithm Visualization", "Operating Systems"],
-    github: "https://github.com/Piyush2005-code",
+    github: "https://github.com/Piyush2005-code/Operating-System-Scheduling-Algorithms.git",
     achievements: [
       "Implemented FCFS, Round Robin, and Priority scheduling algorithms with configurable parameters",
       "Built real-time Gantt chart visualization for process scheduling analysis",
