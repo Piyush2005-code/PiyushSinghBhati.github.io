@@ -46,7 +46,7 @@ const HeroSection = () => {
           </p>
 
           <p className="max-w-xl mx-auto text-muted-foreground mb-10 font-mono text-sm">
-            IIT Jodhpur • B.Tech CSE • CGPA: 8.75
+            IIT Jodhpur • B.Tech CSE
           </p>
 
           {/* Social Links */}

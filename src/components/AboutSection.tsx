@@ -32,41 +32,24 @@ const AboutSection = () => {
 
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I'm an undergraduate <span className="text-foreground">Computer Science and Engineering</span> student 
-                at <span className="text-primary">IIT Jodhpur</span>, passionate about 
-                <span className="text-foreground">Applied Deep Learning</span> and building 
-                <span className="text-foreground">AI systems</span> that solve real problems.
+                I'm an undergraduate <span className="text-foreground">Computer Science and Engineering</span> student
+                at <span className="text-primary">IIT Jodhpur</span>, with a growing foundation in
+                <span className="text-foreground"> Artificial Intelligence</span>, systems engineering, and intelligent physical systems.
               </p>
               <p>
-                I've applied machine learning to <span className="text-foreground">real-world engineering</span>—using 
-                neural surrogate models to accelerate physical simulations and optimize design workflows 
-                that traditionally rely on computationally expensive methods.
+                I've built <span className="text-foreground">scalable AI and LLM-powered applications</span>—including
+                real-time GPU-optimized voice assistants, RAG pipelines, and computer vision models such as
+                <span className="text-foreground"> YOLOv8</span> and <span className="text-foreground">U-Net</span>—alongside
+                core systems work spanning OS scheduling simulators and
+                <span className="text-foreground"> ARM64 unikernel design</span> for ML inference on embedded devices.
               </p>
               <p>
-                Currently exploring <span className="text-foreground">Embedded Systems</span> and 
-                <span className="text-foreground"> Operating Systems</span>—the low-level foundations 
-                that fascinate me. My goal is to work on <span className="text-primary">AI inference 
-                on compute-constrained resources</span> and <span className="text-primary">AI-focused robotics</span>, 
-                where intelligent systems meet hardware limitations.
+                Currently exploring <span className="text-foreground">operating systems</span>, embedded firmware,
+                and low-level systems with the goal of building
+                <span className="text-primary"> thoughtfully designed AI-systems</span> for constrained hardware.
+                I also have a keen passion for <span className="text-foreground">design</span>, expressed through
+                <span className="text-foreground"> CAD modelling</span>.
               </p>
-              <p>
-                I also have a natural <span className="text-foreground">passion for design</span>—an intuition 
-                for form and aesthetics that has so far found expression through 
-                <span className="text-foreground">CAD modeling</span>, but extends to how I approach 
-                building anything visual.
-              </p>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-6 mt-8 pt-8 border-t border-border/50">
-              <div>
-                <p className="text-3xl font-bold text-primary font-mono">8.75</p>
-                <p className="text-sm text-muted-foreground mt-1">CGPA</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-primary font-mono">5+</p>
-                <p className="text-sm text-muted-foreground mt-1">Projects</p>
-              </div>
             </div>
           </div>
         </div>
