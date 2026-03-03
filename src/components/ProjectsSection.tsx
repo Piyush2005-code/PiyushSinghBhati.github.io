@@ -33,7 +33,7 @@ const projects: Project[] = [
       "Engineered a real-time voice assistant with sub-second latency leveraging GPU-accelerated inference pipelines. Built end-to-end ML infrastructure supporting real-time audio processing, natural language understanding, and context-aware response generation.",
     images: [jarvisInterface],
     tags: ["NVIDIA AudioFlamingo3", "vLLM", "RAG", "Docker", "Kubernetes", "PyTorch"],
-    github: "https://github.com/Piyush2005-code",
+    github: "https://github.com/AISocietyIITJ/Jarvis2.O",
     achievements: [
       "Implemented GPU inference on NVIDIA A5000 with sub-second latency using optimized CUDA kernels",
       "Deployed containerized ML inference stack supporting 500+ concurrent users with 98% uptime",
@@ -64,7 +64,7 @@ const projects: Project[] = [
       "Built an automated chart generation pipeline that uses Large Language Models to analyze uploaded PDF documents and generate meaningful data visualizations. Leverages NLP for document understanding and automated insight extraction.",
     images: [llmChartGenerator],
     tags: ["LLMs", "NLP", "PDF Parsing", "React", "Node.js", "Data Visualization"],
-    github: "https://github.com/Piyush2005-code",
+    github: "https://github.com/Piyush2005-code/Chart-Generation-using-LLMs.git",
     achievements: [
       "Implemented LLM-based document parsing using transformer architectures for semantic understanding",
       "Built NLP pipeline for extracting structured data from unstructured PDF content",
@@ -79,7 +79,7 @@ const projects: Project[] = [
       "A computer vision system for detecting and segmenting stressed or diseased crop regions from aerial and field imagery. Uses a U-Net CNN to generate pixel-wise binary masks highlighting yellow-stressed vegetation, with a full end-to-end pipeline from synthetic dataset generation to real-time video inference with overlay visualization.",
     images: [cropDetectionImage, cropDetectionMask, cropDetectionYolo, unetModel],
     tags: ["PyTorch", "U-Net", "OpenCV", "Semantic Segmentation", "Synthetic Data", "CUDA / MPS"],
-    github: "https://github.com/Piyush2005-code",
+    github: "https://github.com/Piyush2005-code/Computer-Vision-for-stressed-crop-detection.git",
     achievements: [
       "Designed and implemented a U-Net-based semantic segmentation model (~7.7M params) with skip connections for pixel-level crop stress detection",
       "Built a synthetic dataset generation pipeline simulating realistic yellow-stressed patches using Gaussian blending and rotational augmentation (4× expansion)",
@@ -96,7 +96,6 @@ const projects: Project[] = [
       "Surveyed high-lift wing configurations targeting lift coefficients greater than 5, benchmarking against state-of-the-art designs. Designed the complete end-to-end CAD model of the full wing assembly and validated aerodynamic performance through iterative CFD simulations.",
     images: [wingCad, wingDrawing, pressureContours, cfdSimulation],
     tags: ["CAD", "CFD", "ANSYS Fluent", "Aerodynamics", "Wing Design"],
-    github: "https://github.com/Piyush2005-code",
     achievements: [
       "Studied fixed-wing flight dynamics and surveyed high-lift wing configurations achieving lift coefficients greater than 5",
       "Achieved a maximum lift coefficient of 8.1258 under realistic thrust-device interaction conditions",
@@ -124,7 +123,7 @@ const projects: Project[] = [
       "Implemented classical OS scheduling algorithms with interactive UI-based visualization. Features real-time Gantt chart generation for analyzing scheduling behavior and algorithm comparison.",
     images: [osScheduler],
     tags: ["React", "TypeScript", "Electron", "Algorithm Visualization", "Operating Systems"],
-    github: "https://github.com/Piyush2005-code",
+    github: "https://github.com/Piyush2005-code/Operating-System-Scheduling-Algorithms.git",
     achievements: [
       "Implemented FCFS, Round Robin, and Priority scheduling algorithms with configurable parameters",
       "Built real-time Gantt chart visualization for process scheduling analysis",
