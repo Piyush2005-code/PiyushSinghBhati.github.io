@@ -15,12 +15,12 @@ const skillCategories: SkillCategory[] = [
   {
     icon: <Cpu className="w-6 h-6" />,
     title: "Robotics & Simulation",
-    skills: ["Fixed-Wing Aerodynamics", "CFD Workflows", "CAD Modeling", "ANSYS Fluent"],
+    skills: ["Multi-rotor Dynamics", "CFD Simulations", "CAD Modeling", "ANSYS Fluent", "Electronics"],
   },
   {
     icon: <Database className="w-6 h-6" />,
     title: "Machine Learning",
-    skills: ["Physics-Informed Models", "Surrogate Modeling", "NeuralFoil", "Deep Learning"],
+    skills: ["Deep Learning", "ANNs", "CNNs(YOLO, U-Net)", "Sequence-to-Sequence models"],
   },
   {
     icon: <Cog className="w-6 h-6" />,
