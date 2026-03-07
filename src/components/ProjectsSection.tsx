@@ -29,21 +29,6 @@ interface Project {
 const projects: Project[] = [
   // AI Projects at the top
   {
-    title: "JARVIS Voice Assistant",
-    subtitle: "2025 • AI/ML Project",
-    description:
-      "Engineered a real-time voice assistant with sub-second latency leveraging GPU-accelerated inference pipelines. Built end-to-end ML infrastructure supporting real-time audio processing, natural language understanding, and context-aware response generation.",
-    images: [jarvisInterface],
-    tags: ["NVIDIA AudioFlamingo3", "vLLM", "RAG", "Docker", "Kubernetes", "PyTorch"],
-    github: "https://github.com/AISocietyIITJ/Jarvis2.O",
-    achievements: [
-      "Implemented GPU inference on NVIDIA A5000 with sub-second latency using optimized CUDA kernels",
-      "Deployed containerized ML inference stack supporting 500+ concurrent users with 98% uptime",
-      "Integrated Retrieval-Augmented Generation (RAG) for context-aware, knowledge-grounded responses",
-      "Built real-time audio processing pipeline using AudioFlamingo3 for voice-to-text transcription",
-    ],
-  },
-  {
     title: "ARM64 Unikernel for ML Inference",
     subtitle: "2025–Ongoing • Embedded Systems / OS",
     description:
@@ -59,6 +44,39 @@ const projects: Project[] = [
       "Identified SMP scaling limitations in Unikraft ELF loader (single-CPU initialization bottleneck)",
     ],
   },
+
+  {
+    title: "OS Scheduling Algorithm Simulator",
+    subtitle: "2025 • Systems Programming",
+    description:
+      "Implemented classical OS scheduling algorithms with interactive UI-based visualization. Features real-time Gantt chart generation for analyzing scheduling behavior and algorithm comparison.",
+    images: [osScheduler],
+    tags: ["React", "TypeScript", "Electron", "Algorithm Visualization", "Operating Systems"],
+    github: "https://github.com/Piyush2005-code/Operating-System-Scheduling-Algorithms.git",
+    achievements: [
+      "Implemented FCFS, Round Robin, and Priority scheduling algorithms with configurable parameters",
+      "Built real-time Gantt chart visualization for process scheduling analysis",
+      "Created interactive UI for comparing algorithm performance metrics",
+      "Developed desktop application using Electron for cross-platform support",
+    ],
+  },
+
+  {
+    title: "JARVIS Voice Assistant",
+    subtitle: "2025 • AI/ML Project",
+    description:
+      "Engineered a real-time voice assistant with sub-second latency leveraging GPU-accelerated inference pipelines. Built end-to-end ML infrastructure supporting real-time audio processing, natural language understanding, and context-aware response generation.",
+    images: [jarvisInterface],
+    tags: ["NVIDIA AudioFlamingo3", "vLLM", "RAG", "Docker", "Kubernetes", "PyTorch"],
+    github: "https://github.com/AISocietyIITJ/Jarvis2.O",
+    achievements: [
+      "Implemented GPU inference on NVIDIA A5000 with sub-second latency using optimized CUDA kernels",
+      "Deployed containerized ML inference stack supporting 500+ concurrent users with 98% uptime",
+      "Integrated Retrieval-Augmented Generation (RAG) for context-aware, knowledge-grounded responses",
+      "Built real-time audio processing pipeline using AudioFlamingo3 for voice-to-text transcription",
+    ],
+  },
+
   {
     title: "LLM-Based Chart Generation Web App",
     subtitle: "2025 • Deep Learning Project",
@@ -118,21 +136,7 @@ const projects: Project[] = [
       "Implemented modular component design for easy maintenance and upgrades",
     ],
   },
-  {
-    title: "OS Scheduling Algorithm Simulator",
-    subtitle: "2025 • Systems Programming",
-    description:
-      "Implemented classical OS scheduling algorithms with interactive UI-based visualization. Features real-time Gantt chart generation for analyzing scheduling behavior and algorithm comparison.",
-    images: [osScheduler],
-    tags: ["React", "TypeScript", "Electron", "Algorithm Visualization", "Operating Systems"],
-    github: "https://github.com/Piyush2005-code/Operating-System-Scheduling-Algorithms.git",
-    achievements: [
-      "Implemented FCFS, Round Robin, and Priority scheduling algorithms with configurable parameters",
-      "Built real-time Gantt chart visualization for process scheduling analysis",
-      "Created interactive UI for comparing algorithm performance metrics",
-      "Developed desktop application using Electron for cross-platform support",
-    ],
-  },
+
 ];
 
 const ProjectsSection = () => {
