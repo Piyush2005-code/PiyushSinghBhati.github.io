@@ -4,7 +4,8 @@ const interests = [
   "Operating Systems",
   "Computer Architecture",
   "GPU Architecture",
-  "Distributed AI Infrastructure",
+  "Robotics",
+  "Design",
 ];
 
 const ResearchInterestsSection = () => {

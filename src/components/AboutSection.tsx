@@ -1,4 +1,4 @@
-import quadcopterHero from "@/assets/quadcopter-hero.png";
+import portrait from "@/assets/Portrait.png";
 
 const AboutSection = () => {
   return (
@@ -12,7 +12,7 @@ const AboutSection = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-electric-blue/20 rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
             <div className="relative glass-card glow-border p-4 overflow-hidden">
               <img
-                src={quadcopterHero}
+                src={portrait}
                 alt="System Architecture Diagram"
                 className="w-full h-auto rounded object-cover"
               />
