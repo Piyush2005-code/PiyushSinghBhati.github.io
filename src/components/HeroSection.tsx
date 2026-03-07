@@ -36,11 +36,13 @@ const HeroSection = () => {
             <span className="text-gradient">Singh Bhati</span>
           </h1>
 
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-8 font-light">
-            Building efficient infrastructure for modern AI systems at the intersection of
-            <span className="text-primary"> Machine Learning</span>,
-            <span className="text-electric-blue"> Operating Systems</span>, and
-            <span className="text-foreground"> Computer Architecture</span>.
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-4 font-light">
+            Building the future at the intersection of
+          </p>
+          <p className="max-w-2xl mx-auto text-xl md:text-2xl text-foreground mb-8 font-medium">
+            <span className="text-primary">Artificial Intelligence</span>
+            <span className="text-muted-foreground mx-3">×</span>
+            <span className="text-electric-blue">Robotic Systems</span>
           </p>
 
           <p className="max-w-xl mx-auto text-muted-foreground mb-10 font-mono text-sm">

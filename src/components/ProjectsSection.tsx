@@ -12,8 +12,9 @@ import cropDetectionImage from "@/assets/Crop_Detection_image.jpg";
 import cropDetectionMask from "@/assets/Crop_Detection_Segmentation_mask.jpg";
 import cropDetectionYolo from "@/assets/Crop_Detection_YOLO_Object_Detection.png";
 import unetModel from "@/assets/UNet model.png";
-import wingSideView from "@/assets/Wing_Side_view.jpeg";
-import FarmAerialImage from "@/assets/Farm_top_image.jpg";
+import wingSideView from "@/assets/Wing_Side_view.jpeg"
+import FarmAerialImage from "@/assets/Farm_top_image.jpg"
+
 
 interface Project {
   title: string;
@@ -23,16 +24,15 @@ interface Project {
   tags: string[];
   github?: string;
   achievements?: string[];
-  category?: string;
 }
 
 const projects: Project[] = [
+  // AI Projects at the top
   {
     title: "ARM64 Unikernel for ML Inference",
     subtitle: "2025–Ongoing • Embedded Systems / OS",
-    category: "AI Systems / Systems Programming",
     description:
-      "Architected a single-address-space ARM64 unikernel optimized for deterministic machine learning inference workloads. Implemented boot sequence, MMU setup, and a cooperative scheduler, and conducted performance benchmarking against Linux-based environments.",
+      "Architecting a single-address-space ARM64 unikernel optimized for deterministic ML inference on embedded devices. Implemented the full bare-metal boot sequence through UART driver on QEMU, a cooperative scheduler, and conducted benchmarking comparing Unikraft vs Linux VMs across inference workloads.",
     images: [embeddedHardware],
     tags: ["C (C11)", "ARM64 Assembly", "QEMU", "GCC Cross-Toolchain", "NEON SIMD", "Unikraft"],
     github: "https://github.com/Piyush2005-code/MiniOS",
@@ -44,12 +44,12 @@ const projects: Project[] = [
       "Identified SMP scaling limitations in Unikraft ELF loader (single-CPU initialization bottleneck)",
     ],
   },
+
   {
     title: "OS Scheduling Algorithm Simulator",
     subtitle: "2025 • Systems Programming",
-    category: "AI Systems / Systems Programming",
     description:
-      "Implemented classical operating system scheduling algorithms with an interactive visualization system for analyzing scheduling performance, latency, and fairness across different workloads.",
+      "Implemented classical OS scheduling algorithms with interactive UI-based visualization. Features real-time Gantt chart generation for analyzing scheduling behavior and algorithm comparison.",
     images: [osScheduler],
     tags: ["React", "TypeScript", "Electron", "Algorithm Visualization", "Operating Systems"],
     github: "https://github.com/Piyush2005-code/Operating-System-Scheduling-Algorithms.git",
@@ -60,12 +60,12 @@ const projects: Project[] = [
       "Developed desktop application using Electron for cross-platform support",
     ],
   },
+
   {
     title: "JARVIS Voice Assistant",
-    subtitle: "2025 • AI Infrastructure",
-    category: "ML Infrastructure",
+    subtitle: "2025 • AI/ML Project",
     description:
-      "Built a GPU-accelerated AI inference pipeline for a real-time voice assistant supporting hundreds of concurrent users. Designed an end-to-end ML infrastructure including RAG retrieval pipelines, containerized deployment, and vLLM-based model serving.",
+      "Engineered a real-time voice assistant with sub-second latency leveraging GPU-accelerated inference pipelines. Built end-to-end ML infrastructure supporting real-time audio processing, natural language understanding, and context-aware response generation.",
     images: [jarvisInterface],
     tags: ["NVIDIA AudioFlamingo3", "vLLM", "RAG", "Docker", "Kubernetes", "PyTorch"],
     github: "https://github.com/AISocietyIITJ/Jarvis2.O",
@@ -76,6 +76,7 @@ const projects: Project[] = [
       "Built real-time audio processing pipeline using AudioFlamingo3 for voice-to-text transcription",
     ],
   },
+
   {
     title: "LLM-Based Chart Generation Web App",
     subtitle: "2025 • Deep Learning Project",
@@ -107,6 +108,7 @@ const projects: Project[] = [
       "Supports CUDA (NVIDIA GPU), Apple MPS, and CPU fallback with memory-optimized reduced-feature U-Net (32 base channels)",
     ],
   },
+  // CAD Project in the middle
   {
     title: "Fixed-Wing STOL Aircraft Wing Design",
     subtitle: "Inter IIT Tech Meet 14.0",
@@ -114,7 +116,6 @@ const projects: Project[] = [
       "Surveyed high-lift wing configurations targeting lift coefficients greater than 5, benchmarking against state-of-the-art designs. Designed the complete end-to-end CAD model of the full wing assembly and validated aerodynamic performance through iterative CFD simulations.",
     images: [wingSideView, wingDrawing, pressureContours, cfdSimulation],
     tags: ["CAD", "CFD", "ANSYS Fluent", "Aerodynamics", "Wing Design"],
-    github: "https://github.com/Piyush2005-code",
     achievements: [
       "Studied fixed-wing flight dynamics and surveyed high-lift wing configurations achieving lift coefficients greater than 5",
       "Achieved a maximum lift coefficient of 8.1258 under realistic thrust-device interaction conditions",
@@ -129,13 +130,13 @@ const projects: Project[] = [
       "Complete design and development of a custom quadcopter with detailed CAD modeling, structural analysis, and component integration for autonomous flight capabilities.",
     images: [quadcopterIsometric, quadcopterFront],
     tags: ["CAD", "UAV Design", "Fusion 360", "Robotics", "Autonomous Systems"],
-    github: "https://github.com/Piyush2005-code",
     achievements: [
       "Designed full assembly CAD model with structural optimization",
       "Optimized frame geometry for payload capacity and flight stability",
       "Implemented modular component design for easy maintenance and upgrades",
     ],
   },
+
 ];
 
 const ProjectsSection = () => {
@@ -147,7 +148,7 @@ const ProjectsSection = () => {
         <div className="text-center mb-16">
           <p className="section-heading">Featured Work</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Projects & <span className="text-gradient">Engineering</span>
+            Projects & <span className="text-gradient">Research</span>
           </h2>
         </div>
 
@@ -194,11 +195,6 @@ const ProjectsSection = () => {
 
               {/* Content */}
               <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                {project.category && (
-                  <span className="inline-block px-3 py-1 text-xs font-mono bg-electric-blue/10 text-electric-blue border border-electric-blue/20 rounded-full mb-3">
-                    {project.category}
-                  </span>
-                )}
                 <p className="font-mono text-sm text-primary mb-2">
                   {project.subtitle}
                 </p>
