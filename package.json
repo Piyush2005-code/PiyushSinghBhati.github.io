@@ -1,8 +1,17 @@
 {
-  "name": "vite_react_shadcn_ts",
-  "private": true,
-  "version": "0.0.0",
+  "name": "ai-robotics-visionary",
+  "description": "Interactive portfolio website showcasing AI and Robotics research, projects, and expertise",
+  "author": "Piyush Singh Bhati",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-robotics-visionary.git"
+  },
+  "homepage": "https://piyushsinghbhati.com",
+  "keywords": ["portfolio", "ai", "robotics", "react", "typescript", "vite"],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
