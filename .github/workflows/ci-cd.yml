@@ -2,9 +2,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ pages, develop ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ pages, develop ]
 
 jobs:
   build-and-test:
@@ -47,7 +47,7 @@ jobs:
   deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/pages' && github.event_name == 'push'
     
     steps:
     - name: Checkout code

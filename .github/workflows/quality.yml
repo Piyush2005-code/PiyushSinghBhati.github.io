@@ -2,7 +2,7 @@ name: Code Quality
 
 on:
   pull_request:
-    branches: [ main, develop ]
+    branches: [ pages, develop ]
 
 jobs:
   quality-checks:
