@@ -11,7 +11,7 @@ This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participatin
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/yourusername/ai-robotics-visionary.git
+   git clone https://github.com/Piyush2005-code/ai-robotics-visionary.git
    cd ai-robotics-visionary
    ```
 3. **Install dependencies**:
@@ -153,8 +153,8 @@ src/
 
 ## Questions or Need Help?
 
-- Check existing [Issues](https://github.com/yourusername/ai-robotics-visionary/issues)
-- Review [Discussions](https://github.com/yourusername/ai-robotics-visionary/discussions)
+- Check existing [Issues](https://github.com/Piyush2005-code/ai-robotics-visionary/issues)
+- Review [Discussions](https://github.com/Piyush2005-code/ai-robotics-visionary/discussions)
 - Open a new issue with your question
 
 ## License

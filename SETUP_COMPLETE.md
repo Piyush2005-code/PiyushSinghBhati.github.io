@@ -100,12 +100,12 @@ Your AI Robotics Visionary portfolio is now fully set up and ready to be hosted 
 
 ## Next Steps to Complete Setup
 
-### 1. **Update GitHub URLs**
-Replace `yourusername` with your GitHub username in:
+### 1. **GitHub URLs Updated**
+All usernames have been updated to `Piyush2005-code` in:
 - `package.json` - `repository.url` and `homepage`
-- `.github/workflows/ci-cd.yml` - GitHub Pages CNAME (optional custom domain)
-- `SECURITY.md` - Replace security contact email
-- `CONTRIBUTING.md` - Replace maintainer references
+- `.github/workflows/ci-cd.yml` - GitHub Pages configuration
+- `SECURITY.md` - GitHub advisory links
+- `CONTRIBUTING.md` - Repository links
 
 ### 2. **Enable GitHub Pages**
 1. Go to your repository Settings
@@ -212,7 +212,7 @@ npm run preview
 After pushing to main:
 1. Visit Actions tab in GitHub
 2. Watch CI/CD workflow run
-3. Once complete, visit `https://yourusername.github.io/ai-robotics-visionary`
+3. Once complete, visit `https://Piyush2005-code.github.io/ai-robotics-visionary`
 4. Your portfolio should be live!
 
 ---

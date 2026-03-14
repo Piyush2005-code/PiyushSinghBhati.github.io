@@ -24,7 +24,7 @@ A modern, interactive portfolio website showcasing research, projects, and exper
 
 ```bash
 # Step 1: Clone the repository
-git clone https://github.com/yourusername/ai-robotics-visionary.git
+git clone https://github.com/Piyush2005-code/ai-robotics-visionary.git
 cd ai-robotics-visionary
 
 # Step 2: Install dependencies

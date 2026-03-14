@@ -32,7 +32,7 @@ When deploying this portfolio:
 
 ## Known Vulnerabilities
 
-We maintain awareness of security advisories in our dependencies. Check [GitHub Security Advisories](https://github.com/yourusername/ai-robotics-visionary/security/advisories) for any known issues.
+We maintain awareness of security advisories in our dependencies. Check [GitHub Security Advisories](https://github.com/Piyush2005-code/ai-robotics-visionary/security/advisories) for any known issues.
 
 ## Supported Versions
 

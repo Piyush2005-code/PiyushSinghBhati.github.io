@@ -36,7 +36,7 @@ If you want `www.piyushsinghbhati.com`:
 
 **Add a CNAME record:**
 - Name/Host: `www`
-- Value: `yourusername.github.io`
+- Value: `Piyush2005-code.github.io`
 - TTL: 3600 (or default)
 
 #### Option C: Both (Recommended)
@@ -52,7 +52,7 @@ Set up both apex and www to work:
 
 **CNAME record (for www):**
 - Name: `www`
-- Value: `yourusername.github.io`
+- Value: `Piyush2005-code.github.io`
 
 ### Step 2: Verify DNS Propagation
 
@@ -119,7 +119,7 @@ After deployment (5-10 minutes):
 | A | @ | 185.199.109.153 | 3600 |
 | A | @ | 185.199.110.153 | 3600 |
 | A | @ | 185.199.111.153 | 3600 |
-| CNAME | www | yourusername.github.io | 3600 |
+| CNAME | www | Piyush2005-code.github.io | 3600 |
 | TXT | @ | (optional verification) | 3600 |
 
 ## GitHub Pages Settings to Configure
